@@ -1,4 +1,5 @@
 #include "iostream"
+#include "lib/Contact.hpp"
 
 void printUsage()
 {
@@ -16,5 +17,14 @@ void printUsage()
 int main()
 {
     printUsage();
+    Contact mycontact;
+
+    // Call setters
+    mycontact.setFirstName("Freddy");
+    mycontact.setLastName("Bicandy");
+
+    // Call getters
+    std::cout << "First Name: " << mycontact.getFirstName() << "\n";
+    std::cout << "Last Name: " << mycontact.getLastName() << "\n";
     return 0;
 }
