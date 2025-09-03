@@ -8,15 +8,17 @@
 
 class PhoneBook
 {
+    private:
+        int counter;
+        Contact contacts[8];
     public:
         PhoneBook();
-        void add();
-        void search();
-        void exit();
         int index;
-    private:
-        static int counter;
-        Contact contacts[8];
+        void add();
+        void exit();
+        void search();
+        int getCounter();
+        void setCounter(int c);
 };
 
 #endif
