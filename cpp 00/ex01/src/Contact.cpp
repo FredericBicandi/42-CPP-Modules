@@ -1,8 +1,8 @@
 #include "../lib/PhoneBook.hpp"
 
-/* 
-    ** Functions **
-*/
+/*
+ ** Functions **
+ */
 Contact::Contact()
 {
     std::cout << "Contact constructor called\n";
@@ -12,40 +12,14 @@ Contact::Contact()
     this->phoneNumber = "";
     this->darkestSecret = "";
 }
-
 Contact::~Contact()
 {
     std::cout << "Object Destroyed\n";
 }
 
-/* 
-    ** Setters **
-*/
-void Contact::setFirstName(std::string firstName)
-{
-    this->firstName = firstName;
-}
-void Contact::setLastName(std::string lastName)
-{
-    this->lastName = lastName;
-}
-void Contact::setnickName(std::string nickName)
-{
-    this->nickName = nickName;
-}
-void Contact::setnickName(std::string phoneNumber)
-{
-    this->phoneNumber = phoneNumber;
-}
-void Contact::setdarkestSecret(std::string darkestSecret)
-{
-    this->darkestSecret = darkestSecret;
-}
-
-
 /*
-    ** Getters **
-*/
+ ** Getters **
+ */
 std::string Contact::getFirstName()
 {
     return this->firstName;
@@ -65,4 +39,32 @@ std::string Contact::getphoneNumber()
 std::string Contact::getdarkestSecret()
 {
     return this->darkestSecret;
+}
+std::string Contact::getphoneNumber()
+{
+    return this->phoneNumber = phoneNumber;
+}
+
+/*
+ ** Setters **
+ */
+void Contact::setFirstName(std::string firstName)
+{
+    this->firstName = firstName;
+}
+void Contact::setLastName(std::string lastName)
+{
+    this->lastName = lastName;
+}
+void Contact::setnickName(std::string nickName)
+{
+    this->nickName = nickName;
+}
+void Contact::setdarkestSecret(std::string darkestSecret)
+{
+    this->darkestSecret = darkestSecret;
+}
+void Contact::setphoneNumber(std::string phoneNumber)
+{
+    this->phoneNumber = phoneNumber;
 }

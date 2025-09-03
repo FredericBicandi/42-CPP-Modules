@@ -9,11 +9,10 @@
 class PhoneBook
 {
     private:
-        int counter;
+        int index;
         Contact contacts[8];
     public:
         PhoneBook();
-        int index;
         void add();
         void exit();
         void search();
