@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug PhoneBook (GDB)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/PhoneBook",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      // "console": "integratedTerminal",   // 👈 this is the key
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"   // adjust if gdb is elsewhere
+    }
+  ]
+}

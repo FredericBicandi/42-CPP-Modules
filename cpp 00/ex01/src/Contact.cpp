@@ -5,7 +5,6 @@
  */
 Contact::Contact()
 {
-    std::cout << "Contact constructor called\n";
     this->firstName = "";
     this->lastName = "";
     this->nickName = "";
@@ -14,7 +13,6 @@ Contact::Contact()
 }
 Contact::~Contact()
 {
-    std::cout << "Object Destroyed\n";
 }
 
 /*
@@ -40,10 +38,7 @@ std::string Contact::getdarkestSecret()
 {
     return this->darkestSecret;
 }
-std::string Contact::getphoneNumber()
-{
-    return this->phoneNumber = phoneNumber;
-}
+
 
 /*
  ** Setters **

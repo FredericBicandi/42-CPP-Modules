@@ -1,36 +1,58 @@
-#include "iostream"
-#include "lib/Contact.hpp"
-#include "lib/PhoneBook.hpp"
-
-void printWelcome()
-{
-    std::cout << "=====================================\n";
-    std::cout << " Welcome to My Awesome PhoneBook! 📖\n";
-    std::cout << "=====================================\n";
-}
-
-void printUsage()
-{
-
-    std::cout << "Available commands:\n";
-    std::cout << "  ADD    - Save a new contact\n";
-    std::cout << "  SEARCH - Display and inspect contacts\n";
-    std::cout << "  EXIT   - Quit the program\n";
-    std::cout << "-------------------------------------\n";
-    std::cout << "Please enter one of the above commands:";
-}
+#include "includes/program.h"
 
 int main()
 {
+    char index;
     std::string input;
+    PhoneBook phoneBook;
 
-    while (1)
+    system("clear");
+    printWelcome();
+    while (true)
     {
-        printWelcome();
         printUsage();
-        std::cin >> input;
-        if (input == "EXIT")
+
+        if (!std::getline(std::cin, input)) break;
+        if (input.empty())
+        {
+            system("clear");
+            continue;
+        }
+
+        if (input == "ADD")
+        {
+            phoneBook.add();
+        }
+        else if (input == "SEARCH")
+        {
+            system("clear");
+            printAllContacts(phoneBook);
+
+            if (!preValidation(index - '0', phoneBook))
+                continue;
+
+            std::cout << "Enter the index of the contact to view details: ";
+            std::cin >> index;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            system("clear");
+
+            if (!postValidation(index, phoneBook))
+                continue;
+
+            phoneBook.setIndex(index - '0');
+            phoneBook.search();
+            continue;
+        }
+        else if (input == "EXIT")
+        {
+            phoneBook.exit();
             break;
+        }
+        else
+        {
+            system("clear");
+            std::cout << "Invalid command. Please try again.\n";
+        }
     }
     return 0;
 }
