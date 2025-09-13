@@ -1,11 +1,13 @@
-#include <iostream>
-#include "Zombie.hpp"
+#include "lib/Zombie.hpp"
 
-int main()
+int main(void)
 {
-    int N = 3;
+    int N;
 
-    Zombie* horde = zombieHorde(N, "HordeMember");
+    N = 3;
+    Zombie *horde = zombieHorde(N, "HordeMember");
+    randomChump("SingleZombie");
+
     delete[] horde;
     return 0;
 }
