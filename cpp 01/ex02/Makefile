@@ -1,4 +1,4 @@
-NAME     := brain
+NAME     := HI_THIS_IS_BRAIN
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 RM       := rm -f

@@ -1,12 +1,10 @@
-NAME     := BraiiiiiiinnnzzzZ
+NAME     := Sed_is_for_losers
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 RM       := rm -f
 
-SRCS := main.cpp \
-	src/newZombie.cpp \
-	src/randomChump.cpp \
-	src/Zombie.cpp \
+SRCS := src/HumanA.cpp src/HumanB.cpp src/Weapon.cpp \
+		main.cpp \
 
 OBJS := $(SRCS:.cpp=.o)
 

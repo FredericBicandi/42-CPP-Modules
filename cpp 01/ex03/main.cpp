@@ -2,19 +2,26 @@
 
 int main(void)
 {
-    Weapon weapon = Weapon("AK-47");
     {
-        HumanA bob("Bob", weapon);
+        Weapon club = Weapon("crude spiked club");
+        std::cout << club.getType() << std::endl;
+        club.setType("some other type of club");
+        std::cout << club.getType() << std::endl;
+    }
+    std::cout << "-------------------------------------" << std::endl;
+    {
+        Weapon knife = Weapon("Butterfly Knife");
+        HumanA bob("Bob", knife);
+        bob.attack();
+        knife.setType("Katana");
         bob.attack();
     }
-
+    std::cout << "-------------------------------------" << std::endl;
     {
-        std::cout << "-------------------------" << std::endl;
-        HumanB Freddy("Freddy");
-        Freddy.attack();
-        weapon.setType("Desert Eagle");
-        Freddy.setWeapon(weapon);
-        Freddy.attack();
+        Weapon GospelWeapon = Weapon("Sword of Damocles");
+        HumanB Fred("Fred");
+        Fred.setWeapon(GospelWeapon);
+        Fred.attack(); 
     }
     return 0;
 }
