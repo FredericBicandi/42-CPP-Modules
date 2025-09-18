@@ -3,7 +3,9 @@ CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 RM       := rm -f
 
-SRCS := main.cpp
+SRCS := src/HumanA.cpp src/HumanB.cpp src/Weapon.cpp \
+		main.cpp \
+
 OBJS := $(SRCS:.cpp=.o)
 
 all: $(NAME)

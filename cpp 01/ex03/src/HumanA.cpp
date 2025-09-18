@@ -4,7 +4,11 @@ HumanA::HumanA(std::string name, Weapon weapon) : weapon(weapon)
 {
     this->weapon = weapon;
     this->name = name;
-    std::cout << "HumanA created" << std::endl;
+}
+
+void HumanA::attack() const
+{
+    std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA() {}
