@@ -8,6 +8,6 @@ int main(void)
     Zombie *horde = zombieHorde(N, "HordeMember");
     randomChump("SingleZombie");
 
-    delete[] horde;
+    delete [] horde;
     return 0;
 }
