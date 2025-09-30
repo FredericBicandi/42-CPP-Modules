@@ -1,21 +1,21 @@
 #include "../lib/HumanB.hpp"
 
-HumanB::HumanB(std::string name) : name(name), weapon(*(new Weapon("unarmed")))
+HumanB::HumanB(std::string name) : name(name), weapon(0)
 {
     std::cout << this->name << " spawned without a weapon" << std::endl;
     return;
 }
 
-void HumanB::attack() const
+void HumanB::attack()
 {
-    if (this->weapon.getType() == "unarmed")
+    if (this->weapon->getType() == "unarmed")
         std::cout << this->name << " is unarmed and cannot attack" << std::endl;
     else
-        std::cout << this->name << " attacks with his " << this->weapon.getType() << std::endl;
+        std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
     return;
 }
 
-void HumanB::setWeapon(Weapon &Weapon)
+void HumanB::setWeapon(Weapon *Weapon)
 {
     this->weapon = Weapon;
     return;

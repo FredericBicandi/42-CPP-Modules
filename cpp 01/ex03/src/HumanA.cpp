@@ -14,6 +14,6 @@ void HumanA::attack() const
 
 HumanA::~HumanA()
 {
-    std::cout << this->name << "" << std::endl;
+    std::cout << this->name << "has been destroyed" << std::endl;
     return;
 }

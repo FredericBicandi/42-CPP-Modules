@@ -20,7 +20,7 @@ int main(void)
     {
         Weapon GospelWeapon = Weapon("Sword of Damocles");
         HumanB Fred("Fred");
-        Fred.setWeapon(GospelWeapon);
+        Fred.setWeapon(&GospelWeapon);
         Fred.attack(); 
     }
     return 0;
