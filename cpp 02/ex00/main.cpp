@@ -13,7 +13,6 @@ int	main( void )
 
 	a.setRawBits( 42 );
 	std::cout << a.getRawBits() << std::endl;
-
     
 	return ( 0 );
 }

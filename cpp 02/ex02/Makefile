@@ -1,4 +1,4 @@
-NAME     := fixed_point
+NAME     := fixed_point_advanced
 CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 RM       := rm -f
