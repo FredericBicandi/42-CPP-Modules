@@ -1,0 +1,119 @@
+*This project has been created as part of the 42 curriculum by <fbicandy>.*
+
+# CPP Module 07 — Templates
+
+## Description
+This module introduces C++ templates.  
+It teaches how to write generic code that works with any type.
+
+There are 3 exercises:
+
+ex00: generic functions (swap, min, max)  
+ex01: template function iter for arrays  
+ex02: template class Array
+
+Goal:
+Understand how templates allow writing reusable code without rewriting it for each type.
+
+---
+
+## Instructions
+
+Compile inside each exercise folder.
+
+Example:
+
+cd ex00
+make
+./whatever
+
+cd ex01
+make
+./iter
+
+cd ex02
+make
+./array
+
+Compiler flags:
+-Wall -Wextra -Werror -std=c++98
+
+---
+
+## Library / Classes Description
+
+### ex00 — Templates functions
+Functions implemented:
+swap  
+min  
+max  
+
+These functions work with any type:
+int, float, string, etc.
+
+Concept learned:
+function templates.
+
+---
+
+### ex01 — iter
+Template function that:
+- takes array address
+- takes array size
+- takes function pointer
+- applies function to each element
+
+Works with:
+const arrays  
+non-const arrays  
+
+Concept learned:
+template with function pointers and const correctness.
+
+---
+
+### ex02 — Array class
+Template dynamic array class.
+
+Features:
+- dynamic allocation with new[]
+- deep copy
+- operator[]
+- bounds checking (throws exception)
+- size() method
+
+Concept learned:
+template classes and memory management.
+
+---
+
+## Technical Choices
+Templates are defined in header files.
+No STL containers used.
+Deep copy implemented manually.
+Exceptions used for bounds checking.
+
+---
+
+## Resources
+C++ reference:
+https://en.cppreference.com
+
+Templates:
+https://en.cppreference.com/w/cpp/language/templates
+
+---
+
+## AI Usage
+AI was used for:
+- clarifying subject requirements
+- debugging
+- checking template behavior
+- verifying edge cases
+
+All implementations were written manually and understood.
+
+---
+
+## Author
+42 Beirut CPP Module 07
