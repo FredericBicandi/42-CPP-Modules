@@ -1,0 +1,100 @@
+*This project has been created as part of the 42 curriculum by <fbicandy>.*
+
+# CPP Module 06 — C++ Casts
+
+## Description
+This project teaches C++ type casting and runtime type identification.
+
+It contains 3 exercises:
+
+ex00: ScalarConverter  
+Takes a string literal and converts it to:
+char, int, float, double.
+
+ex01: Serialization  
+Converts a pointer to an integer and back using reinterpret_cast.
+
+ex02: Identify real type  
+Randomly creates A, B, or C objects and detects their real type at runtime using dynamic_cast.
+
+Goal:
+Understand C++ casts and when to use each:
+static_cast  
+reinterpret_cast  
+dynamic_cast
+
+---
+
+## Instructions
+
+Compile inside each exercise folder.
+
+Example:
+
+cd ex00
+make
+./convert 42
+
+cd ex01
+make
+./serializer
+
+cd ex02
+make
+./identify
+
+Compiler flags:
+-Wall -Wextra -Werror -std=c++98
+
+---
+
+## Classes / Library Description
+
+ScalarConverter
+Static utility class.
+Detects literal type and prints conversions.
+Cannot be instantiated.
+
+Serializer
+Static class.
+Converts:
+Data* → uintptr_t → Data*
+Used to understand pointer representation.
+
+Base / A / B / C
+Polymorphic classes.
+Used to detect real object type at runtime.
+
+Functions:
+generate()
+identify(Base*)
+identify(Base&)
+
+---
+
+## Resources
+
+C++ reference:
+https://en.cppreference.com
+
+Casts:
+https://en.cppreference.com/w/cpp/language/explicit_cast
+
+dynamic_cast:
+https://en.cppreference.com/w/cpp/language/dynamic_cast
+
+---
+
+## AI Usage
+AI was used for:
+- clarifying subject requirements
+- debugging
+- checking edge cases
+- reviewing structure
+
+All implementations were written and understood manually.
+
+---
+
+## Author
+42 Beirut CPP Module 06
