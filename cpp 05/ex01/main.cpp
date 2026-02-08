@@ -30,7 +30,7 @@ int main()
         Form bad1("Bad1", 0, 10);
         std::cout << bad1;
     }
-    catch (std::exception& e)
+    catch (std::exception &e)
     {
         std::cout << "Exception: " << e.what() << "\n";
     }
@@ -40,7 +40,7 @@ int main()
         Form bad2("Bad2", 10, 151);
         std::cout << bad2;
     }
-    catch (std::exception& e)
+    catch (std::exception &e)
     {
         std::cout << "Exception: " << e.what() << "\n";
     }

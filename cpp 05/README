@@ -1,0 +1,25 @@
+# CPP Module 05 — Bureaucrats & Forms
+
+## Overview
+This module implements a bureaucratic system to practice **exceptions, abstract classes, inheritance, and polymorphism** in C++98.
+
+You implement:
+- `Bureaucrat`
+- `AForm` (abstract base class)
+- Concrete forms
+- `Intern` factory
+
+Main goal: enforce rules with exceptions and design clean class interactions.
+
+---
+
+## Compilation
+```bash
+make
+./ex00
+./ex01
+./ex02
+./ex03
+
+-Wall -Wextra -Werror -std=c++98
+

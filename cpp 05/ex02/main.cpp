@@ -1,49 +1,58 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {
-    std::cout << "=== Create Bureaucrats and Forms ===\n";
+    std::srand(std::time(NULL));
+
     Bureaucrat boss("Boss", 1);
-    Bureaucrat intern("Intern", 150);
+    Bureaucrat mid("Mid", 50);
+    Bureaucrat low("Low", 150);
 
-    Form easy("EasyForm", 150, 150);
-    Form hard("HardForm", 1, 1);
+    ShrubberyCreationForm shrub("home");
+    RobotomyRequestForm robot("Bender");
+    PresidentialPardonForm pardon("Arthur");
 
+    std::cout << "=== Initial ===\n";
     std::cout << boss;
-    std::cout << intern;
-    std::cout << easy;
-    std::cout << hard;
+    std::cout << mid;
+    std::cout << low;
+
+    std::cout << shrub;
+    std::cout << robot;
+    std::cout << pardon;
+
+    std::cout << "\n=== Execute unsigned (should fail) ===\n";
+    boss.executeForm(shrub);
 
     std::cout << "\n=== Signing ===\n";
-    intern.signForm(easy); // should sign
-    std::cout << easy;
+    low.signForm(shrub);   // will fail (needs 145)
+    mid.signForm(shrub);   // should sign
+    low.signForm(robot);   // fail (needs 72)
+    mid.signForm(robot);   // sign (50 <= 72)
+    mid.signForm(pardon);  // fail (needs 25)
+    boss.signForm(pardon); // sign
 
-    intern.signForm(hard); // should fail
-    boss.signForm(hard);   // should sign
-    std::cout << hard;
+    std::cout << "\n=== Execute ===\n";
+    low.executeForm(shrub);   // fail (exec 137)
+    mid.executeForm(shrub);   // success -> creates file
 
-    std::cout << "\n=== Invalid Form Construction ===\n";
-    try
-    {
-        Form bad1("Bad1", 0, 10);
-        std::cout << bad1;
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Exception: " << e.what() << "\n";
-    }
+    mid.executeForm(robot);   // fail (exec 45)
+    boss.executeForm(robot);  // success (50%)
 
-    try
-    {
-        Form bad2("Bad2", 10, 151);
-        std::cout << bad2;
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Exception: " << e.what() << "\n";
-    }
+    boss.executeForm(pardon); // success
+
+    std::cout << "\n=== Invalid Bureaucrat grade ===\n";
+    try { Bureaucrat bad("Bad", 0); }
+    catch (std::exception& e) { std::cout << e.what() << "\n"; }
+
+    try { Bureaucrat bad2("Bad2", 151); }
+    catch (std::exception& e) { std::cout << e.what() << "\n"; }
 
     return 0;
 }

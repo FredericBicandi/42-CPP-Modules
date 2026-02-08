@@ -3,15 +3,12 @@
 
 Bureaucrat::Bureaucrat() : name("default"), grade(150)
 {
-    std::cout << "default constructor called" << std::endl;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade)
 {
-    std::cout << "coopy default constructor called" << std::endl;
 }
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade)
 {
-    std::cout << "constructor called" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     if (grade > 150)
@@ -19,15 +16,12 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(g
 }
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "operator oveload constructor called" << std::endl;
-
     if (this != &other)
         grade = other.grade;
     return *this;
 }
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "destructor called" << std::endl;
 }
 
 const std::string &Bureaucrat::getName() const
