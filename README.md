@@ -6,11 +6,11 @@
 
 ## Status
 
-Started: 24/09/2024.
+Started: 21/09/2025.
 
-Finished: 28/04/2025.
+Finished: pending.
 
-Grade: 97%
+Grade: 90%
 
 ## Projects Idea
 
